@@ -1,0 +1,64 @@
+{
+  "name": "genpark-agentic-commerce-marketplace-sales-tax-nexus-sentinel-skill",
+  "version": "1.0.0",
+  "title": "Marketplace Sales Tax Economic Nexus & Facilitator Relief Sentinel Skill",
+  "description": "Wayfair economic nexus tracker (200 transactions / $100k thresholds by state), physical vs marketplace facilitator sales deduplication, and liability alert. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "agentic-commerce",
+  "topics": [
+    "sales-tax",
+    "economic-nexus",
+    "wayfair-compliance",
+    "marketplace-facilitator",
+    "agentic-commerce",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "evaluate_state_economic_nexus_exposure",
+      "description": "Assess state-by-state economic nexus exposure under South Dakota v. Wayfair thresholds.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "state_code": {
+            "type": "string"
+          },
+          "gross_sales_usd": {
+            "type": "number"
+          },
+          "transaction_count": {
+            "type": "integer"
+          },
+          "marketplace_facilitator_sales_usd": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "state_code",
+          "gross_sales_usd",
+          "transaction_count"
+        ]
+      }
+    },
+    {
+      "name": "generate_state_by_state_nexus_registration_roadmap",
+      "description": "Generate prioritized sales tax registration and filing roadmap for states breaching thresholds.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "breached_states": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "breached_states"
+        ]
+      }
+    }
+  ]
+}
